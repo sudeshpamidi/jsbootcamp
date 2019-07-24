@@ -3,23 +3,17 @@
 "use strict"
 
 //user input 
-var currentTime = "25.00";
+var hours = new Date().getHours();
 var greeting;
 
-//convert the time into float
-var convertedCurrentTime = parseFloat(currentTime)
+console.log("hours : " + hours);
 
 // make sure that user input is in correct format.
-if (!isNaN(convertedCurrentTime)) {
-    if (convertedCurrentTime > 24 || convertedCurrentTime.toFixed(2) > 59) {
-        greeting = ""
-    } else {
-        if (convertedCurrentTime >= 0 && convertedCurrentTime <= 10.00)
-            greeting = "Good morning!";
-        else if (convertedCurrentTime > 10.00 && convertedCurrentTime <= 16.59)
-            greeting = "Good day!";
-        else if (convertedCurrentTime >= 17.00 && convertedCurrentTime < 24)
-            greeting = "Good evening!";
-    }
-}
+if (hours >= 0 && hours <= 10)
+    greeting = "Good morning!";
+else if (hours > 10 && hours <= 16.59)
+    greeting = "Good day!";
+else if (hours >= 17.00 && hours < 24)
+    greeting = "Good evening!";
+
 console.log(greeting);
