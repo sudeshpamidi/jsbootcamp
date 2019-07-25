@@ -18,6 +18,14 @@ function addNumbers(num1, num2) {
     console.log(num1 + " + " + num2 + " = " + result);
 }
 
+
+// Function to add two variables
+function substractNumbers(num1, num2) {
+
+    var result = num1 - num2;
+    console.log(num1 + " - " + num2 + " = " + result);
+}
+
 // Function to diplay receipt
 function displayReceipt(totalDue, amountPaid) {
 

@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>Celsius to Ferenheit</title>
+    <style>
+        .answer-box,
+        .bordered-box {
+            border: 1px solid rgba(0, 0, 0, .2);
+            border-radius: 2px;
+            padding: 10px;
+        }
+        
+        .answer-box {
+            background-color: rgba(38, 128, 217, .2);
+            margin-bottom: 20px;
+            display: none;
+        }
+        
+        .input-error {
+            margin: 5px 0 0;
+            display: none;
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Celsius to Ferenheit</h1>
+
+    <div class="Container">
+        <div class="row ml-2 mr-2">
+            <div class="col-md-4 col-sm-12" style="box-sizing: border-box;">
+                <form class="bordered-box mb-2">
+                    <div class="form-group">
+                        <label for="degrees">Degrees</label>
+                        <input type="text" id="degrees" name="degrees" class="form-control" onkeyup="displayResults()">
+                    </div>
+                    <div id="data-error" class="form-text input-error">Must be a number</div>
+                    <div class="form-group form-row">
+
+                        <div class="col-6">
+                            <label for="from-unit">From</label>
+                            <select class="form-control" name="from-unit" id="from-unit" onchange="changeToValue()">
+                            <option value="Celsius">Celsius</option>
+                            <option value="Forenheit">Forenheit</option>
+                        </select>
+
+                        </div>
+                        <div class="col-6">
+                            <label for="to-unit">To</label>
+                            <select class="form-control" name="to-unit" id="to-unit" onchange="changeFromValue()">
+                                <option value="Forenheit">Forenheit</option>
+                                <option value="Celsius">Celsius</option>                                
+                            </select>
+                        </div>
+                    </div>
+                </form>
+                <div class="answer-box text-xl" id="results">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script>
+        function convertCtoF(celcius) {
+            //  Math.round((celcius * (9 / 5) + 32) * 100) / 100; -- instead ogf this write as below - Sudesh            
+            return parseFloat(celcius * (9 / 5) + 32).toFixed(2);
+        }
+
+        function convertFtoC(farenheit) {
+            return Math.round((farenheit - 32) * (5 / 9) * 100) / 100;
+        }
+
+        function displayResults() {
+            var temperature = document.getElementById('degrees').value;
+            var tovalue = document.getElementById('to-unit').value;
+            if (tovalue == "Celsius") {
+                document.getElementById('results').innerHTML = temperature + "° Censius " + convertCtoF(temperature) + " ° Forenheit";
+            } else
+                document.getElementById('results').innerHTML = temperature + "° Censius " + convertFtoC(temperature) + " ° Forenheit";
+
+        }
+
+        function changeToValue() {
+            var fromvalue = document.getElementById('from-unit').value;
+            if (fromvalue == "Celsius")
+                document.getElementById('to-unit').value = "Forenheit";
+            else
+                document.getElementById('to-unit').value = "Celsius";
+
+        }
+
+        function changeFromValue() {
+            var tovalue = document.getElementById('to-unit').value;
+            if (tovalue == "Celsius")
+                document.getElementById('from-unit').value = "Forenheit";
+            else
+                document.getElementById('from-unit').value = "Celsius";
+
+        }
+    </script>
+</body>
+
+</html>
