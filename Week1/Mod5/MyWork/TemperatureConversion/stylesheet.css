@@ -1,0 +1,11 @@
+.bordered-box {
+    border: 1px solid rgba(0, 0, 0, .2);
+    border-radius: 2px;
+    padding: 25px;
+}
+
+.result-box {
+    background-color: rgba(38, 128, 217, .2);
+    margin: 5px 0 0;
+    /*display: inline;*/
+}

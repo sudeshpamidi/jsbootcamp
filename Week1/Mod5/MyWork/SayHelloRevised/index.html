@@ -1,0 +1,29 @@
+<html>
+
+<head>
+    <title>Demo1</title>
+    <script>
+        "use strict"
+
+        function init() {
+
+            const btm = document.getElementById("helloBtn")
+            btm.onclick = greetUser;
+        }
+        window.onload = function() {
+
+            const btm = document.getElementById("helloBtn")
+            btm.onclick = greetUser;
+        }
+    </script>
+
+</head>
+
+<body>
+    <input type="text" id="name" name="name">
+    <input id="helloBtn" type="button" value="Say Hello">
+    <script src="greeting.js">
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Payroll Calculator</title>
+    <link rel="stylesheet" href="css/stylesheet.css">
+
+
+</head>
+
+<body>
+    <h1 class="text-center mb-4">Payroll Calculator</h1>
+
+    <div class="container-fluid">
+        <div class="row">
+
+            <div class="col-md-4 offset-md-4">
+                <form class="bordered-box mb-2" id="frm" action="#" method="GET" onsubmit="event.preventDefault();">
+                    <div class="form-group row">
+                        <label for="hourswoked" class="col-sm-6 col-form-label">Hours Worked:</label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" id="hourswoked" name="hourswoked" placeholder="Worked Hours">
+                        </div>
+                    </div>
+                    <!--<div id="data-error" class="form-text input-error">Must be a number</div> -->
+
+                    <div class="form-group row">
+                        <label for="payrate" class="col-sm-6 col-form-label">Payroll:</label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" id="payrate" name="payrate" placeholder="Payroll">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="filingstatus" class="col-sm-6 col-form-label">Filing Status:</label>
+                        <div class="col-sm-6">
+                            <select class="form-control" name="filingstatus" id="filingstatus">
+                                    <option value="Single">Single</option>
+                                    <option value="Joint">Joint</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="withholdingcode" class="col-sm-6 col-form-label">Withholding Code:</label>
+                        <div class="col-sm-6">
+                            <select class="form-control" name="withholdingcode" id="withholdingcode">
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <div class="col-sm-12 text-center">
+                            <button class="btn btn-primary" id="calculate">Calculate</button>
+                        </div>
+                    </div>
+                    <div class="result-box text-xl" id="results">
+                    </div>
+                </form>
+            </div>
+
+        </div>
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <script src="js/payrollcalculator.js"></script>
+</body>
+
+</html>
